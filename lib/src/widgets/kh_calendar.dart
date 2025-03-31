@@ -41,7 +41,7 @@ class KhCalendar extends StatefulWidget {
 
   /// Creates a Khmer calendar widget
   const KhCalendar({
-    Key? key,
+    super.key,
     this.initialDate,
     this.onDateSelected,
     this.useKhmerDigits = true,
@@ -52,7 +52,7 @@ class KhCalendar extends StatefulWidget {
     this.dayStyle,
     this.highlightToday = true,
     this.showBuddhistYear = true,
-  }) : super(key: key);
+  });
 
   @override
   State<KhCalendar> createState() => _KhCalendarState();

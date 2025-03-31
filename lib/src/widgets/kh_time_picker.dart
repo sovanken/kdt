@@ -37,7 +37,7 @@ class KhTimePicker extends StatefulWidget {
   /// [onTimeSelected] is required and will be called whenever the user selects a time.
   /// [initialTime] defaults to the current time if not provided.
   const KhTimePicker({
-    Key? key,
+    super.key,
     this.initialTime,
     required this.onTimeSelected,
     this.timeStyle,
@@ -46,7 +46,7 @@ class KhTimePicker extends StatefulWidget {
     this.borderRadius = 8.0,
     this.useKhmerDigits = true,
     this.showSeconds = false,
-  }) : super(key: key);
+  });
 
   @override
   State<KhTimePicker> createState() => _KhTimePickerState();

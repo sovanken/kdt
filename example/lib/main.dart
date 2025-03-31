@@ -9,7 +9,7 @@ void main() {
 }
 
 class KDTExampleApp extends StatelessWidget {
-  const KDTExampleApp({Key? key}) : super(key: key);
+  const KDTExampleApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class KDTExampleApp extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
 
 // ================ FORMATTING PAGE ================
 class FormattingPage extends StatefulWidget {
-  const FormattingPage({Key? key}) : super(key: key);
+  const FormattingPage({super.key});
 
   @override
   State<FormattingPage> createState() => _FormattingPageState();
@@ -309,7 +309,7 @@ class _FormattingPageState extends State<FormattingPage> {
 
 // ================ NUMERALS PAGE ================
 class NumeralsPage extends StatefulWidget {
-  const NumeralsPage({Key? key}) : super(key: key);
+  const NumeralsPage({super.key});
 
   @override
   State<NumeralsPage> createState() => _NumeralsPageState();
@@ -602,7 +602,7 @@ class _NumeralsPageState extends State<NumeralsPage> {
 
 // ================ PARSING PAGE ================
 class ParsingPage extends StatefulWidget {
-  const ParsingPage({Key? key}) : super(key: key);
+  const ParsingPage({super.key});
 
   @override
   State<ParsingPage> createState() => _ParsingPageState();
@@ -854,7 +854,7 @@ class _ParsingPageState extends State<ParsingPage> {
 
 // ================ CALCULATION PAGE ================
 class CalculationPage extends StatefulWidget {
-  const CalculationPage({Key? key}) : super(key: key);
+  const CalculationPage({super.key});
 
   @override
   State<CalculationPage> createState() => _CalculationPageState();
@@ -867,9 +867,9 @@ class _CalculationPageState extends State<CalculationPage> {
       TextEditingController(text: '7');
 
   String _operation = 'addDays';
-  String _timePeriod = 'days';
+  final String _timePeriod = 'days';
 
-  bool _useKhmerDigits = true;
+  final bool _useKhmerDigits = true;
 
   // Date differences
   late DateTime _date1;
@@ -1226,7 +1226,7 @@ class _CalculationPageState extends State<CalculationPage> {
 
 // ================ TIMEZONE PAGE ================
 class TimezonePage extends StatefulWidget {
-  const TimezonePage({Key? key}) : super(key: key);
+  const TimezonePage({super.key});
 
   @override
   State<TimezonePage> createState() => _TimezonePageState();
@@ -1545,7 +1545,7 @@ class _TimezonePageState extends State<TimezonePage> {
 
 // ================ WIDGETS PAGE ================
 class WidgetsPage extends StatefulWidget {
-  const WidgetsPage({Key? key}) : super(key: key);
+  const WidgetsPage({super.key});
 
   @override
   State<WidgetsPage> createState() => _WidgetsPageState();

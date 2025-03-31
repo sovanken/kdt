@@ -421,15 +421,6 @@ For major changes, please open an issue first to discuss what you would like to 
 
 Please make sure to update tests as appropriate and follow the [Flutter style guide](https://dart.dev/guides/language/effective-dart/style).
 
-## 🙏 Support
-
-If you find this package helpful, please give it a star on GitHub and consider supporting its continued development:
-
-<a href="https://www.buymeacoffee.com/sovanken" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="50px">
-</a>
-
-Your support helps maintain this package and develop new features!
 
 ## 📄 License
 

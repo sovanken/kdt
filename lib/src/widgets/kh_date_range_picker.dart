@@ -47,7 +47,7 @@ class KhDateRangePicker extends StatefulWidget {
 
   /// Creates a Khmer date range picker widget
   const KhDateRangePicker({
-    Key? key,
+    super.key,
     this.initialStartDate,
     this.initialEndDate,
     required this.onDateRangeSelected,
@@ -60,7 +60,7 @@ class KhDateRangePicker extends StatefulWidget {
     this.endDateLabel,
     this.maxDateSpan,
     this.borderRadius = 8.0,
-  }) : super(key: key);
+  });
 
   @override
   State<KhDateRangePicker> createState() => _KhDateRangePickerState();

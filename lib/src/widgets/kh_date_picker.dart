@@ -38,7 +38,7 @@ class KhDatePicker extends StatefulWidget {
   /// [onDateSelected] is required and will be called whenever the user selects a date.
   /// [initialDate] defaults to the current date if not provided.
   const KhDatePicker({
-    Key? key,
+    super.key,
     this.initialDate,
     required this.onDateSelected,
     this.dateStyle,
@@ -47,7 +47,7 @@ class KhDatePicker extends StatefulWidget {
     this.borderRadius = 8.0,
     this.useKhmerDigits = true,
     this.useBuddhistYear = true,
-  }) : super(key: key);
+  });
 
   @override
   State<KhDatePicker> createState() => _KhDatePickerState();
