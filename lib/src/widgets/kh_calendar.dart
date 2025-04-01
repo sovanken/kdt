@@ -111,7 +111,7 @@ class _KhCalendarState extends State<KhCalendar> {
             style: widget.headerStyle ??
                 const TextStyle(
                   fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  //fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
           ),
@@ -134,9 +134,11 @@ class _KhCalendarState extends State<KhCalendar> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: List.generate(7, (index) {
           // Starting with Sunday (0)
-          final weekdayText = KhLocaleData.khmerDays[index];
+          //final weekdayText = KhLocaleData.khmerDays[index];
+
           // Take just the first character for shorter display
-          final shortName = weekdayText.characters.first;
+          //final shortName = weekdayText.characters.first;
+          final shortName = KhLocaleData.khmerDaysShort[index];
 
           return Expanded(
             child: Center(
@@ -145,7 +147,7 @@ class _KhCalendarState extends State<KhCalendar> {
                 style: widget.weekdayStyle ??
                     TextStyle(
                       fontSize: 14,
-                      fontWeight: FontWeight.bold,
+                      //fontWeight: FontWeight.bold,
                       color: Colors.grey[700],
                     ),
               ),
@@ -179,6 +181,12 @@ class _KhCalendarState extends State<KhCalendar> {
         ? KhmerNumerals.convert(day.toString())
         : day.toString();
 
+    // Get the primary color
+    final primaryColor = widget.primaryColor ?? Theme.of(context).primaryColor;
+
+    // Create a semi-transparent version for today's highlight (30% opacity)
+    final todayColor = primaryColor.withAlpha(76); // 0.3 * 255 ≈ 76
+
     return InkWell(
       onTap: isCurrentMonth
           ? () {
@@ -194,10 +202,9 @@ class _KhCalendarState extends State<KhCalendar> {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: isSelected
-              ? widget.primaryColor ?? Theme.of(context).primaryColor
+              ? primaryColor
               : isToday
-                  ? (widget.primaryColor ?? Theme.of(context).primaryColor)
-                      .withOpacity(0.3)
+                  ? todayColor
                   : Colors.transparent,
         ),
         child: Center(
@@ -212,9 +219,9 @@ class _KhCalendarState extends State<KhCalendar> {
                 ) ??
                 TextStyle(
                   fontSize: 14,
-                  fontWeight: isToday || isSelected
-                      ? FontWeight.bold
-                      : FontWeight.normal,
+                  // fontWeight: isToday || isSelected
+                  //     ? FontWeight.bold
+                  //     : FontWeight.normal,
                   color: isSelected
                       ? Colors.white
                       : isCurrentMonth
@@ -263,13 +270,16 @@ class _KhCalendarState extends State<KhCalendar> {
 
   @override
   Widget build(BuildContext context) {
+    // Create a shadow color with 10% opacity
+    final shadowColor = Colors.black.withAlpha(26); // 0.1 * 255 ≈ 26
+
     return Container(
       decoration: BoxDecoration(
         color: widget.backgroundColor ?? Colors.white,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: shadowColor,
             blurRadius: 4,
             offset: const Offset(0, 2),
           ),

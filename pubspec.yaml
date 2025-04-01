@@ -1,11 +1,9 @@
 name: kdt
 description: "A comprehensive Flutter package for Khmer (Cambodian) date and time handling, including formatting, parsing, calculation, and UI components."
-version: 0.1.0
+version: 0.1.0+1
 homepage: https://github.com/sovanken/kdt
 repository: https://github.com/sovanken/kdt
 issue_tracker: https://github.com/sovanken/kdt/issues
-funding:
-  - https://www.buymeacoffee.com/sovanken
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43

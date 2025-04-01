@@ -1,5 +1,9 @@
 # KDT - Khmer Date Time
 
+[![Pub Version](https://img.shields.io/pub/v/kdt.svg)](https://pub.dev/packages/kdt)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Flutter Platform](https://img.shields.io/badge/Platform-Flutter-02569B?logo=flutter)](https://flutter.dev)
+
 A comprehensive Flutter package for Khmer (Cambodian) date and time handling, including formatting, parsing, calculation, and UI components.
 
 ## 📋 Table of Contents
@@ -7,10 +11,13 @@ A comprehensive Flutter package for Khmer (Cambodian) date and time handling, in
 - [Features](#-features)
 - [Requirements](#-requirements)
 - [Installation](#-installation)
+- [Quick Start](#-quick-start)
 - [Usage](#-usage)
 - [API Reference](#-api-reference)
 - [Example App](#-example-app)
+- [Screenshots](#-screenshots)
 - [Supported Platforms](#-supported-platforms)
+- [Changelog](#-changelog)
 - [Contributing](#-contributing)
 - [Support](#-support)
 - [License](#-license)
@@ -63,13 +70,56 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  kdt: ^0.1.0
+  kdt: ^0.1.0+1
 ```
 
 Then run:
 
 ```
 flutter pub get
+```
+
+## 🚀 Quick Start
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:kdt/kdt.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // Get current date in Khmer format
+    final now = DateTime.now();
+    final khmerDate = KhmerDateFormatter.formatDate(now, useKhmerDigits: true);
+    
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('KDT Example')),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Today in Khmer: $khmerDate', 
+                  style: const TextStyle(fontSize: 20)),
+              const SizedBox(height: 20),
+              KhDatePicker(
+                initialDate: now,
+                onDateSelected: (date) => print('Selected: $date'),
+                useKhmerDigits: true,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 ```
 
 ## 🔍 Usage
@@ -383,14 +433,6 @@ Cambodia timezone utilities.
 
 Check out the `/example` directory for a complete Flutter application demonstrating all components of this package. The example app showcases each feature with practical use cases and customization options.
 
-To run the example app:
-
-```bash
-cd example
-flutter pub get
-flutter run
-```
-
 ## 🖥️ Supported Platforms
 
 This package is primarily built for Flutter and has been tested on:
@@ -400,12 +442,16 @@ This package is primarily built for Flutter and has been tested on:
   - iOS 11.0+
 
 - **Web**
-  - Chrome, Firefox, Safari, Edge
+  - Chrome, Firefox, Safari, Edge,...
 
 - **Desktop**
   - Windows
   - macOS
   - Linux
+
+## 📝 Changelog
+
+See the [CHANGELOG.md](CHANGELOG.md) file for details on version updates and changes.
 
 ## 🤝 Contributing
 
@@ -421,15 +467,10 @@ For major changes, please open an issue first to discuss what you would like to 
 
 Please make sure to update tests as appropriate and follow the [Flutter style guide](https://dart.dev/guides/language/effective-dart/style).
 
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👨‍💻 About the Author
 
-**sovanken** is a passionate Flutter developer focused on creating meaningful tools and experiences. With a deep interest in accessibility, localization, and building products that make a difference, sovanken is committed to creating high-quality, open-source solutions that empower developers and users alike.
-
 - GitHub: [sovanken](https://github.com/sovanken)
-- Buy Me a Coffee: [sovanken](https://www.buymeacoffee.com/sovanken)
-
